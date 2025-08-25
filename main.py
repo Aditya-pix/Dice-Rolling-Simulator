@@ -1,8 +1,8 @@
 import random
 
 print("\nDice Rolling Game\n")
-x=input("press 'Y' to roll and 'Any Key' to exit: ")
-while x=='y':
+x=input("press 'Y' to roll and 'Any Key' to exit: ").upper()
+while x=='Y':
     num= random.randint(1,6)
     if num==1:
         print("-------")
@@ -41,7 +41,7 @@ while x=='y':
         print("|o   o|")
         print("-------")
     
-    x=input("press 'Y' to roll again and 'Any Key' to exit: ")
+    x=input("press 'Y' to roll again and 'Any Key' to exit: ").upper()
 
 print("\nThank You For Playing !!!\n")
     
