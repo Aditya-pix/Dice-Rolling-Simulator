@@ -1,47 +1,56 @@
 import random
+from colorama import Fore, Back, Style,init
 
+init(autoreset=True)
 print("\nDice Rolling Game\n")
+
+dice_faces = {
+    1: ["-------",
+        "|     |",
+        "|  o  |",
+        "|     |",
+        "-------"],
+    2: ["-------",
+        "|o    |",
+        "|     |",
+        "|    o|",
+        "-------"],
+    3: ["-------",
+        "|o    |",
+        "|  o  |",
+        "|    o|",
+        "-------"],
+    4: ["-------",
+        "|o   o|",
+        "|     |",
+        "|o   o|",
+        "-------"],
+    5: ["-------",
+        "|o   o|",
+        "|  o  |",
+        "|o   o|",
+        "-------"],
+    6: ["-------",
+        "|o   o|",
+        "|o   o|",
+        "|o   o|",
+        "-------"]
+}
+colors=[Fore.RED,Fore.BLACK,Fore.BLUE,Fore.GREEN,Fore.YELLOW,Fore.CYAN,Fore.MAGENTA,Fore.WHITE]
 x=input("press 'Y' to roll and 'Any Key' to exit: ").upper()
+
 while x=='Y':
     num= random.randint(1,6)
-    if num==1:
-        print("-------")
-        print("|     |")
-        print("|  o  |")
-        print("|     |")
-        print("-------")
-    elif num==2:
-        print("-------")
-        print("|o    |")
-        print("|     |")
-        print("|    o|")
-        print("-------")
-    elif num==3:
-        print("-------")
-        print("|o    |")
-        print("|  o  |")
-        print("|    o|")
-        print("-------")
-    elif num==4:
-        print("-------")
-        print("|o   o|")
-        print("|     |")
-        print("|o   o|")
-        print("-------")
-    elif num==5:
-        print("-------")
-        print("|o   o|")
-        print("|  o  |")
-        print("|o   o|")
-        print("-------")
-    elif num==6:
-        print("-------")
-        print("|o   o|")
-        print("|o   o|")
-        print("|o   o|")
-        print("-------")
-    
-    x=input("press 'Y' to roll again and 'Any Key' to exit: ").upper()
+    color=random.choice(colors)
+    print(color + "\n".join(dice_faces[num]))  
 
-print("\nThank You For Playing !!!\n")
+    x = input(
+    "Press " 
+    + Fore.GREEN + Style.BRIGHT+ "Y" + Style.RESET_ALL 
+    + " to roll again and " 
+    + Fore.RED +  Style.BRIGHT + "Any Key" + Style.RESET_ALL 
+    + " to exit: "
+    ).upper()
+
+print( Fore.GREEN + Style.BRIGHT +"\nThank You For Playing !!!\n")
     
